@@ -1,0 +1,40 @@
+{
+  "name": "ss-it-solution-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "build:brand": "python scripts/build-brand.py brand-source/black_on_trans.png",
+    "build:icons": "node scripts/extract-icons.cjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "framer-motion": "^14.0.0",
+    "lucide-react": "^1.53.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^7.18.4",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "simple-icons": "^16.34.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9",
+    "vite": "^8.3.4"
+  }
+}

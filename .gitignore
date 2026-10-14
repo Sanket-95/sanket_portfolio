@@ -1,0 +1,12 @@
+node_modules
+dist
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+dist-ssr
+
+# Upload package for shared hosting
+*.zip

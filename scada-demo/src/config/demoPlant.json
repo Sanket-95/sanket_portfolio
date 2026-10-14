@@ -1,0 +1,643 @@
+{
+  "lines": [
+    {
+      "id": 1,
+      "label": "BARREL LINE",
+      "tanks": 21,
+      "wagons": 1,
+      "type": "barrel"
+    },
+    {
+      "id": 2,
+      "label": "BASKET LINE",
+      "tanks": 22,
+      "wagons": 1,
+      "type": "rack"
+    }
+  ],
+  "tankTags": {
+    "1": {
+      "name": "LOAD_AT_STATION_1",
+      "label": "Loading Bay A",
+      "type": "uint16",
+      "address": ""
+    },
+    "2": {
+      "name": "LOAD_AT_STATION_2",
+      "label": "Soak Cleaner",
+      "type": "uint16",
+      "address": ""
+    },
+    "3": {
+      "name": "LOAD_AT_STATION_3",
+      "label": "Electro Cleaner",
+      "type": "uint16",
+      "address": ""
+    },
+    "4": {
+      "name": "LOAD_AT_STATION_4",
+      "label": "Rinse 1",
+      "type": "uint16",
+      "address": ""
+    },
+    "5": {
+      "name": "LOAD_AT_STATION_5",
+      "label": "Rinse 2 (Counterflow)",
+      "type": "uint16",
+      "address": ""
+    },
+    "6": {
+      "name": "LOAD_AT_STATION_6",
+      "label": "HCl Pickle",
+      "type": "uint16",
+      "address": ""
+    },
+    "7": {
+      "name": "LOAD_AT_STATION_7",
+      "label": "Rinse 3",
+      "type": "uint16",
+      "address": ""
+    },
+    "8": {
+      "name": "LOAD_AT_STATION_8",
+      "label": "Rinse 4 (Counterflow)",
+      "type": "uint16",
+      "address": ""
+    },
+    "9": {
+      "name": "LOAD_AT_STATION_9",
+      "label": "Acid Activation",
+      "type": "uint16",
+      "address": ""
+    },
+    "10": {
+      "name": "LOAD_AT_STATION_10",
+      "label": "Pre-Dip",
+      "type": "uint16",
+      "address": ""
+    },
+    "11": {
+      "name": "LOAD_AT_STATION_11",
+      "label": "Zn-Ni Plating Cell 1",
+      "type": "uint16",
+      "address": ""
+    },
+    "12": {
+      "name": "LOAD_AT_STATION_12",
+      "label": "Zn-Ni Plating Cell 2",
+      "type": "uint16",
+      "address": ""
+    },
+    "13": {
+      "name": "LOAD_AT_STATION_13",
+      "label": "Zn-Ni Plating Cell 3",
+      "type": "uint16",
+      "address": ""
+    },
+    "14": {
+      "name": "LOAD_AT_STATION_14",
+      "label": "Zn-Ni Plating Cell 4",
+      "type": "uint16",
+      "address": ""
+    },
+    "15": {
+      "name": "LOAD_AT_STATION_15",
+      "label": "Zn-Ni Plating Cell 5",
+      "type": "uint16",
+      "address": ""
+    },
+    "16": {
+      "name": "LOAD_AT_STATION_16",
+      "label": "Zn-Ni Plating Cell 6",
+      "type": "uint16",
+      "address": ""
+    },
+    "17": {
+      "name": "LOAD_AT_STATION_17",
+      "label": "Zn-Ni Plating Cell 7",
+      "type": "uint16",
+      "address": ""
+    },
+    "18": {
+      "name": "LOAD_AT_STATION_18",
+      "label": "Zn-Ni Plating Cell 8",
+      "type": "uint16",
+      "address": ""
+    },
+    "19": {
+      "name": "LOAD_AT_STATION_19",
+      "label": "Dragout Recovery",
+      "type": "uint16",
+      "address": ""
+    },
+    "20": {
+      "name": "LOAD_AT_STATION_20",
+      "label": "Final Rinse A",
+      "type": "uint16",
+      "address": ""
+    },
+    "21": {
+      "name": "LOAD_AT_STATION_21",
+      "label": "Unloading Bay A",
+      "type": "uint16",
+      "address": ""
+    },
+    "22": {
+      "name": "LOAD_AT_STATION_22",
+      "label": "Loading Bay B",
+      "type": "uint16",
+      "address": ""
+    },
+    "23": {
+      "name": "LOAD_AT_STATION_23",
+      "label": "Nitric Activation",
+      "type": "uint16",
+      "address": ""
+    },
+    "24": {
+      "name": "LOAD_AT_STATION_24",
+      "label": "Rinse 5",
+      "type": "uint16",
+      "address": ""
+    },
+    "25": {
+      "name": "LOAD_AT_STATION_25",
+      "label": "Rinse 6 (Counterflow)",
+      "type": "uint16",
+      "address": ""
+    },
+    "26": {
+      "name": "LOAD_AT_STATION_26",
+      "label": "Acid Brightener Dip",
+      "type": "uint16",
+      "address": ""
+    },
+    "27": {
+      "name": "LOAD_AT_STATION_27",
+      "label": "Rinse 7",
+      "type": "uint16",
+      "address": ""
+    },
+    "28": {
+      "name": "LOAD_AT_STATION_28",
+      "label": "Rinse 8 (Counterflow)",
+      "type": "uint16",
+      "address": ""
+    },
+    "29": {
+      "name": "LOAD_AT_STATION_29",
+      "label": "Trivalent Passivation Blue",
+      "type": "uint16",
+      "address": ""
+    },
+    "30": {
+      "name": "LOAD_AT_STATION_30",
+      "label": "Rinse 9",
+      "type": "uint16",
+      "address": ""
+    },
+    "31": {
+      "name": "LOAD_AT_STATION_31",
+      "label": "Rinse 10 (Counterflow)",
+      "type": "uint16",
+      "address": ""
+    },
+    "32": {
+      "name": "LOAD_AT_STATION_32",
+      "label": "Hot Water Rinse 1",
+      "type": "uint16",
+      "address": ""
+    },
+    "33": {
+      "name": "LOAD_AT_STATION_33",
+      "label": "Trivalent Passivation Black",
+      "type": "uint16",
+      "address": ""
+    },
+    "34": {
+      "name": "LOAD_AT_STATION_34",
+      "label": "Rinse 11",
+      "type": "uint16",
+      "address": ""
+    },
+    "35": {
+      "name": "LOAD_AT_STATION_35",
+      "label": "Rinse 12 (Counterflow)",
+      "type": "uint16",
+      "address": ""
+    },
+    "36": {
+      "name": "LOAD_AT_STATION_36",
+      "label": "Hot Water Rinse 2",
+      "type": "uint16",
+      "address": ""
+    },
+    "37": {
+      "name": "LOAD_AT_STATION_37",
+      "label": "DI Water Rinse",
+      "type": "uint16",
+      "address": ""
+    },
+    "38": {
+      "name": "LOAD_AT_STATION_38",
+      "label": "Warm DI Rinse",
+      "type": "uint16",
+      "address": ""
+    },
+    "39": {
+      "name": "LOAD_AT_STATION_39",
+      "label": "Centrifuge Dehydrator",
+      "type": "uint16",
+      "address": ""
+    },
+    "40": {
+      "name": "LOAD_AT_STATION_40",
+      "label": "Top Coat Sealer 1",
+      "type": "uint16",
+      "address": ""
+    },
+    "41": {
+      "name": "LOAD_AT_STATION_41",
+      "label": "Top Coat Sealer 2",
+      "type": "uint16",
+      "address": ""
+    },
+    "42": {
+      "name": "LOAD_AT_STATION_42",
+      "label": "Hot Air Dryer",
+      "type": "uint16",
+      "address": ""
+    },
+    "43": {
+      "name": "LOAD_AT_STATION_43",
+      "label": "Unloading Bay B",
+      "type": "uint16",
+      "address": ""
+    }
+  },
+  "wagonTags": {
+    "1": {
+      "name": "W1_LOCATION",
+      "address": "",
+      "type": "uint16",
+      "upLiftTag": {
+        "name": "W1_UP_PX",
+        "address": ""
+      },
+      "downLiftTag": {
+        "name": "W1_DOWN_PX",
+        "address": ""
+      },
+      "autoTag": {
+        "name": "W1_IN_AUTO_MODE",
+        "address": ""
+      },
+      "manualTag": {
+        "address": "",
+        "name": "W1_IN_MANUAL_MODE"
+      },
+      "serviceTag": {
+        "address": "",
+        "name": "W1_IN_SERVICE_MODE"
+      }
+    },
+    "2": {
+      "name": "W2_LOCATION",
+      "address": "",
+      "type": "uint16",
+      "upLiftTag": {
+        "name": "W2_UP_PX",
+        "address": ""
+      },
+      "downLiftTag": {
+        "name": "W2_DOWN_PX",
+        "address": ""
+      },
+      "autoTag": {
+        "name": "W2_IN_AUTO_MODE",
+        "address": ""
+      },
+      "manualTag": {
+        "name": "W2_IN_MANUAL_MODE",
+        "address": ""
+      },
+      "serviceTag": {
+        "name": "W2_IN_SERVICE_MODE",
+        "address": ""
+      }
+    }
+  },
+  "stationParams": {
+    "2": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      }
+    ],
+    "3": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "6": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      }
+    ],
+    "11": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "12": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "13": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "14": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "15": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "16": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "17": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "18": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      },
+      {
+        "label": "Calculated Current",
+        "address": "",
+        "type": "int16",
+        "unit": "A"
+      }
+    ],
+    "23": [
+      {
+        "label": "Actual PH",
+        "address": "",
+        "type": "int16",
+        "unit": "pH"
+      }
+    ],
+    "26": [
+      {
+        "label": "Actual PH",
+        "address": "",
+        "type": "int16",
+        "unit": "pH"
+      }
+    ],
+    "29": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual PH",
+        "address": "",
+        "type": "int16",
+        "unit": "pH"
+      }
+    ],
+    "32": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      }
+    ],
+    "33": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual PH",
+        "address": "",
+        "type": "int16",
+        "unit": "pH"
+      }
+    ],
+    "36": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      }
+    ],
+    "38": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      }
+    ],
+    "40": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual PH",
+        "address": "",
+        "type": "int16",
+        "unit": "pH"
+      }
+    ],
+    "41": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      },
+      {
+        "label": "Actual PH",
+        "address": "",
+        "type": "int16",
+        "unit": "pH"
+      }
+    ],
+    "42": [
+      {
+        "label": "Actual Temperature",
+        "address": "",
+        "type": "int16",
+        "unit": "°C"
+      }
+    ]
+  },
+  "stationParamLabels": {},
+  "tankPartitions": [
+    {
+      "id": "grp_1791367637344",
+      "lineId": 1,
+      "lineLabel": "LINE-A",
+      "fromId": 11,
+      "toId": 18
+    }
+  ],
+  "stationLoadNumbers": {}
+}
