@@ -9,7 +9,7 @@ import cafePreview from '@/assets/previews/cafe.jpg';
 export const highlights = [
   { value: '60,000+', label: 'bales managed by the warehouse system I modernised at Reliance' },
   { value: '40+', label: 'audit-ready reports delivered for a pharma production line at Cipla' },
-  { value: '10+', label: 'websites and web applications shipped to production' },
+  { value: '15+', label: 'websites and web applications shipped to production' },
   { value: '4', label: 'interactive demos you can try on this site' },
 ];
 
