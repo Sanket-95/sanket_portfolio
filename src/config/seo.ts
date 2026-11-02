@@ -43,6 +43,13 @@ export const routeMeta: RouteMeta[] = [
       'A café order-management mobile app demo: take table orders, track them through the kitchen and see the day’s sales dashboard.',
     priority: 0.6, changefreq: 'monthly',
   },
+  {
+    path: '/planet',
+    title: 'Portfolio Planet | 3D Browser Game | Sanket Sathe',
+    description:
+      'A small 3D browser game: walk around a tiny planet, discover monuments to real projects and collect the parts of a crashed spaceship.',
+    priority: 0.5, changefreq: 'monthly',
+  },
 ];
 
 export const getRouteMeta = (path: string): RouteMeta | undefined =>

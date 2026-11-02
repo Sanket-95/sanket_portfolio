@@ -1,0 +1,86 @@
+/* Portfolio Planet — styles for the game only. Every selector is prefixed with .pp-
+   so nothing here can affect the rest of the site. Layout uses the site's Tailwind classes. */
+
+.pp-root {
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pp-canvas {
+  position: absolute !important;
+  inset: 0;
+  transition: background 0.25s linear;
+}
+
+.pp-fade {
+  animation: pp-fade 0.3s ease-out both;
+}
+
+.pp-pop {
+  animation: pp-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pp-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  border: 2px solid rgb(255 255 255 / 0.35);
+  border-top-color: #fff;
+  animation: pp-spin 0.8s linear infinite;
+}
+
+.pp-joystick {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 9999px;
+  background: rgb(2 6 23 / 0.35);
+  border: 2px solid rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(6px);
+  touch-action: none;
+}
+
+.pp-joystick-knob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.85);
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.3);
+}
+
+.pp-jump {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 9999px;
+  color: #fff;
+  background: rgb(37 99 235 / 0.85);
+  border: 2px solid rgb(255 255 255 / 0.35);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.3);
+  touch-action: none;
+}
+
+.pp-jump:active {
+  transform: scale(0.94);
+}
+
+@keyframes pp-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pp-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pp-spin {
+  to { transform: rotate(360deg); }
+}
