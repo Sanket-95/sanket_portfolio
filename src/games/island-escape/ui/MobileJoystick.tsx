@@ -35,7 +35,7 @@ export function MobileJoystick() {
     <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex items-end justify-between p-5">
       <div
         ref={pad}
-        className="pp-joystick pointer-events-auto"
+        className="ie-joystick pointer-events-auto"
         onPointerDown={(e) => {
           pointer.current = e.pointerId;
           e.currentTarget.setPointerCapture(e.pointerId);
@@ -46,11 +46,11 @@ export function MobileJoystick() {
         onPointerCancel={release}
         aria-hidden="true"
       >
-        <div className="pp-joystick-knob" style={{ transform: `translate(${knob.x}px, ${knob.y}px)` }} />
+        <div className="ie-joystick-knob" style={{ transform: `translate(${knob.x}px, ${knob.y}px)` }} />
       </div>
       <button
         type="button"
-        className="pp-jump pointer-events-auto"
+        className="ie-jump pointer-events-auto"
         onPointerDown={(e) => {
           e.preventDefault();
           input.jump = true;

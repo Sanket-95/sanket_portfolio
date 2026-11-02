@@ -5,6 +5,7 @@ import scadaPreview from '@/assets/previews/scada.jpg';
 import chatbotPreview from '@/assets/previews/chatbot.jpg';
 import shopPreview from '@/assets/previews/shop.jpg';
 import cafePreview from '@/assets/previews/cafe.jpg';
+import islandPreview from '@/assets/previews/island.jpg';
 
 export const highlights = [
   { value: '60,000+', label: 'bales managed by the warehouse system I modernised at Reliance' },
@@ -133,6 +134,16 @@ export const demos: Demo[] = [
     summary: 'A staff app to take table orders, move them through the kitchen and track the day’s sales on a dashboard.',
     highlights: ['Order Workflow', 'Kitchen Tracking', 'Sales Dashboard'],
     image: cafePreview,
+  },
+  {
+    id: 'island-escape',
+    title: 'Island Escape — 3D Portfolio Game',
+    path: '/island',
+    category: '3D Browser Game',
+    summary:
+      'Stranded on Dev Island: collect the tech I work with and visit a site for each of my real projects to rebuild your boat and sail home.',
+    highlights: ['Three.js', 'React Three Fiber', 'Procedural World'],
+    image: islandPreview,
   },
 ];
 

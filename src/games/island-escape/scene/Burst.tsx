@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { AdditiveBlending, BufferAttribute, BufferGeometry, Color, Vector3, type PointsMaterial } from 'three';
+import { AdditiveBlending, BufferAttribute, BufferGeometry, CanvasTexture, Color, Vector3, type PointsMaterial } from 'three';
 
 const COUNT = 48;
 const WHITE = new Color('#ffffff');
@@ -22,7 +22,26 @@ export function Burst() {
     g.setAttribute('position', new BufferAttribute(new Float32Array(COUNT * 3), 3));
     return g;
   }, []);
-  useEffect(() => () => geometry.dispose(), [geometry]);
+  // Round, soft sparkles instead of square points.
+  const sprite = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 32;
+    const c = canvas.getContext('2d')!;
+    const g = c.createRadialGradient(16, 16, 0, 16, 16, 16);
+    g.addColorStop(0, 'rgba(255,255,255,1)');
+    g.addColorStop(0.4, 'rgba(255,255,255,0.8)');
+    g.addColorStop(1, 'rgba(255,255,255,0)');
+    c.fillStyle = g;
+    c.fillRect(0, 0, 32, 32);
+    return new CanvasTexture(canvas);
+  }, []);
+  useEffect(
+    () => () => {
+      geometry.dispose();
+      sprite.dispose();
+    },
+    [geometry, sprite],
+  );
 
   useFrame((_, dt) => {
     const pos = geometry.getAttribute('position') as BufferAttribute;
@@ -48,7 +67,7 @@ export function Burst() {
 
   return (
     <points geometry={geometry} frustumCulled={false}>
-      <pointsMaterial ref={material} size={0.22} transparent opacity={0} blending={AdditiveBlending} depthWrite={false} />
+      <pointsMaterial ref={material} map={sprite} size={0.32} transparent opacity={0} blending={AdditiveBlending} depthWrite={false} />
     </points>
   );
 }

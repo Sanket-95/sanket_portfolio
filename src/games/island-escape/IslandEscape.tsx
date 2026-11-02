@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { Seo, breadcrumb } from '@/components/seo/Seo';
-import { monuments } from './data/projects';
+import { sites } from './data/island';
 import { actions, useGame } from './hooks/useGameStore';
 import { resetInput, useControls } from './hooks/useControls';
 import { closeAudio, unlockAudio } from './audio';
@@ -26,11 +26,11 @@ function useIsTouch() {
   return touch;
 }
 
-/** Route component for /planet: the 3D scene with the game UI on top. */
-export default function PortfolioPlanet() {
+/** Route component for /island: the 3D scene with the game UI on top. */
+export default function IslandEscape() {
   const phase = useGame((s) => s.phase);
   const ready = useGame((s) => s.ready);
-  const openId = useGame((s) => s.openMonument);
+  const openId = useGame((s) => s.openSite);
   const isTouch = useIsTouch();
   // The canvas is client-only; the pre-rendered page shows the intro while it loads.
   const [mounted, setMounted] = useState(false);
@@ -51,11 +51,11 @@ export default function PortfolioPlanet() {
     actions.start();
   };
 
-  const open = monuments.find((m) => m.id === openId);
+  const open = sites.find((s) => s.id === openId);
 
   return (
-    <div className="pp-root fixed inset-0 overflow-hidden bg-gradient-to-b from-[#3b6fd8] to-[#a5d8ff]">
-      <Seo path="/planet" jsonLd={[breadcrumb('Portfolio Planet', '/planet')]} />
+    <div className="ie-root fixed inset-0 overflow-hidden bg-gradient-to-b from-[#3a86e0] to-[#cdeeff]">
+      <Seo path="/island" jsonLd={[breadcrumb('Island Escape', '/island')]} />
       {mounted && (
         <Suspense fallback={null}>
           <World />
@@ -63,9 +63,9 @@ export default function PortfolioPlanet() {
       )}
 
       {phase === 'intro' && <IntroScreen ready={ready} isTouch={isTouch} onStart={start} />}
-      {(phase === 'playing' || phase === 'repairing' || phase === 'launching') && <HUD isTouch={isTouch} />}
+      {(phase === 'playing' || phase === 'repairing' || phase === 'sailing') && <HUD isTouch={isTouch} />}
       {phase === 'playing' && isTouch && !open && <MobileJoystick />}
-      {open && <ProjectCard monument={open} />}
+      {open && <ProjectCard site={open} />}
       {phase === 'won' && <WinScreen onRestart={start} />}
     </div>
   );

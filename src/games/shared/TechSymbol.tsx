@@ -24,6 +24,12 @@ export function techGeometry(name: BrandKey): BufferGeometry {
   return geo;
 }
 
+/** Frees every cached logo geometry (call when the game unmounts). */
+export function disposeTechGeometries() {
+  cache.forEach((geo) => geo.dispose());
+  cache.clear();
+}
+
 /** Colour of a logo, brightened where the brand colour is too dark to read in 3D. */
 export function techColor(name: BrandKey) {
   const dark: Partial<Record<BrandKey, string>> = { threejs: '#f5f5f5', mqtt: '#c561c5', dotnet: '#9b7bff', nodejs: '#6cc24a' };

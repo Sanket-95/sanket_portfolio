@@ -47,12 +47,18 @@ export const sfx = {
   open() {
     tone(520, 0, 0.12, 'sine', 0.06);
   },
-  repair() {
-    [440, 554, 659, 880].forEach((f, i) => tone(f, i * 0.35, 0.3, 'triangle', 0.08));
+  ready() {
+    [523, 659, 784].forEach((f, i) => tone(f, i * 0.1, 0.25, 'triangle', 0.08));
   },
-  launch() {
-    tone(90, 0, 2.6, 'sawtooth', 0.06, 900);
-    tone(60, 0, 2.2, 'square', 0.03, 300);
+  /** One plank (or sail, or engine) fitted to the boat. */
+  fit(step: number) {
+    tone(380 + step * 22, 0, 0.09, 'square', 0.035);
+  },
+  /** Ship's horn and the engine starting. */
+  sail() {
+    tone(147, 0, 1.1, 'sawtooth', 0.05);
+    tone(220, 0, 1.1, 'sawtooth', 0.035);
+    tone(70, 1.1, 2.4, 'square', 0.025, 140);
   },
   win() {
     [523, 659, 784, 1047].forEach((f, i) => tone(f, i * 0.12, 0.35, 'triangle', 0.09));

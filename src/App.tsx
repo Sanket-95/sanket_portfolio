@@ -11,7 +11,7 @@ const pageLoaders: Record<string, () => Promise<PageModule>> = {
   '/chat-bot': () => import('@/pages/ChatBotPage'),
   '/ecommerce-demo': () => import('@/pages/EcommerceDemoPage'),
   '/mobile-app-demo': () => import('@/pages/MobileAppDemoPage'),
-  '/planet': () => import('@/games/portfolio-planet/PortfolioPlanet'),
+  '/island': () => import('@/games/island-escape/IslandEscape'),
   '/404': () => import('@/pages/NotFound'),
 };
 
@@ -45,10 +45,10 @@ export default function App() {
       </Route>
       {/* Full-screen game, outside the site layout. */}
       <Route
-        path="planet"
+        path="island"
         element={
           <Suspense fallback={<PageLoader />}>
-            <Page path="/planet" />
+            <Page path="/island" />
           </Suspense>
         }
       />

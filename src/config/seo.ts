@@ -44,10 +44,10 @@ export const routeMeta: RouteMeta[] = [
     priority: 0.6, changefreq: 'monthly',
   },
   {
-    path: '/planet',
-    title: 'Portfolio Planet | 3D Browser Game | Sanket Sathe',
+    path: '/island',
+    title: 'Island Escape | 3D Portfolio Game | Sanket Sathe',
     description:
-      'A small 3D browser game: walk around a tiny planet, discover monuments to real projects and collect the parts of a crashed spaceship.',
+      'A 3D browser game: stranded on Dev Island, collect the tech scattered across it and visit a site for each of my real projects to rebuild your boat and sail home.',
     priority: 0.5, changefreq: 'monthly',
   },
 ];

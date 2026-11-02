@@ -1,37 +1,65 @@
-/* Portfolio Planet — styles for the game only. Every selector is prefixed with .pp-
+/* Island Escape — styles for the game only. Every selector is prefixed with .ie-
    so nothing here can affect the rest of the site. Layout uses the site's Tailwind classes. */
 
-.pp-root {
+.ie-root {
   touch-action: none;
   overscroll-behavior: none;
   -webkit-user-select: none;
   user-select: none;
 }
 
-.pp-canvas {
+.ie-canvas {
   position: absolute !important;
   inset: 0;
-  transition: background 0.25s linear;
 }
 
-.pp-fade {
-  animation: pp-fade 0.3s ease-out both;
+.ie-fade {
+  animation: ie-fade 0.3s ease-out both;
 }
 
-.pp-pop {
-  animation: pp-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+.ie-pop {
+  animation: ie-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.pp-spinner {
+.ie-spinner {
   width: 1rem;
   height: 1rem;
   border-radius: 9999px;
   border: 2px solid rgb(255 255 255 / 0.35);
   border-top-color: #fff;
-  animation: pp-spin 0.8s linear infinite;
+  animation: ie-spin 0.8s linear infinite;
 }
 
-.pp-joystick {
+/* Collected-tech grid in the HUD: 10 per row on wide screens, 7 on phones. */
+.ie-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 16px);
+  gap: 5px;
+}
+
+@media (max-width: 480px) {
+  .ie-grid {
+    grid-template-columns: repeat(7, 16px);
+    gap: 4px;
+  }
+}
+
+.ie-minimap {
+  width: 132px;
+  height: 132px;
+  border-radius: 9999px;
+  border: 2px solid rgb(255 255 255 / 0.5);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.25);
+}
+
+@media (max-width: 640px), (max-height: 500px) {
+  .ie-minimap {
+    width: 92px;
+    height: 92px;
+  }
+}
+
+.ie-joystick {
   position: relative;
   width: 120px;
   height: 120px;
@@ -42,7 +70,7 @@
   touch-action: none;
 }
 
-.pp-joystick-knob {
+.ie-joystick-knob {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -54,7 +82,7 @@
   box-shadow: 0 4px 14px rgb(0 0 0 / 0.3);
 }
 
-.pp-jump {
+.ie-jump {
   display: grid;
   place-items: center;
   width: 76px;
@@ -67,20 +95,20 @@
   touch-action: none;
 }
 
-.pp-jump:active {
+.ie-jump:active {
   transform: scale(0.94);
 }
 
-@keyframes pp-fade {
+@keyframes ie-fade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes pp-pop {
+@keyframes ie-pop {
   from { opacity: 0; transform: translateY(8px) scale(0.97); }
   to { opacity: 1; transform: none; }
 }
 
-@keyframes pp-spin {
+@keyframes ie-spin {
   to { transform: rotate(360deg); }
 }

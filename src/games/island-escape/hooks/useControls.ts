@@ -37,12 +37,12 @@ export function resetInput() {
   input.jump = false;
 }
 
-/** Keyboard controls: WASD / arrows to move, Space to jump, E to view a monument. */
+/** Keyboard controls: WASD / arrows to move, Space to jump, E to view a project site. */
 export function useControls() {
   useEffect(() => {
     const onDown = (e: KeyboardEvent) => {
       const s = getState();
-      if (s.phase !== 'playing' || s.openMonument) return;
+      if (s.phase !== 'playing' || s.openSite) return;
       // Let Space / Enter activate a focused button instead of jumping.
       const target = e.target as HTMLElement | null;
       if (target?.closest('button, a, input, textarea, select')) {

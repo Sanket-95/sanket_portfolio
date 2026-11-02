@@ -1,10 +1,10 @@
 import { useSyncExternalStore } from 'react';
-import { shipParts } from '../data/projects';
+import { sites, symbols } from '../data/island';
 
 // A tiny external store: React components subscribe with useGame(selector); the
 // 3D scene reads getState() inside useFrame so per-frame work never re-renders React.
 
-export type Phase = 'intro' | 'playing' | 'repairing' | 'launching' | 'won';
+export type Phase = 'intro' | 'playing' | 'repairing' | 'sailing' | 'won';
 
 export interface GameState {
   phase: Phase;
@@ -12,9 +12,12 @@ export interface GameState {
   ready: boolean;
   /** Increments on every new run; scene parts are keyed by it so they reset. */
   run: number;
+  /** Brand keys of the collected tech symbols, in pick-up order. */
   collected: string[];
-  nearMonument: string | null;
-  openMonument: string | null;
+  /** Ids of the project sites whose card has been opened. */
+  visited: string[];
+  nearSite: string | null;
+  openSite: string | null;
   muted: boolean;
   /** Play time banked before the current running stretch (ms). */
   banked: number;
@@ -25,16 +28,17 @@ export interface GameState {
   newBest: boolean;
 }
 
-const BEST_KEY = 'portfolio-planet-best';
-const MUTE_KEY = 'portfolio-planet-muted';
+const BEST_KEY = 'island-escape-best';
+const MUTE_KEY = 'island-escape-muted';
 
 const initial: GameState = {
   phase: 'intro',
   ready: false,
   run: 0,
   collected: [],
-  nearMonument: null,
-  openMonument: null,
+  visited: [],
+  nearSite: null,
+  openSite: null,
   muted: false,
   banked: 0,
   runningSince: null,
@@ -88,6 +92,9 @@ export const elapsed = (s: GameState = state) =>
 
 const pause = (s: GameState) => ({ banked: elapsed(s), runningSince: null });
 
+/** Every symbol collected and every project site visited: the boat can be repaired. */
+export const isComplete = (s: GameState = state) => s.collected.length === symbols.length && s.visited.length === sites.length;
+
 export const actions = {
   /** Client-only setup: restore the best time and mute setting. */
   hydrate() {
@@ -101,49 +108,48 @@ export const actions = {
       phase: 'playing',
       run: state.run + 1,
       collected: [],
-      nearMonument: null,
-      openMonument: null,
+      visited: [],
+      nearSite: null,
+      openSite: null,
       banked: 0,
       runningSince: performance.now(),
       finalTime: null,
       newBest: false,
     });
   },
-  collect(partId: string) {
-    if (state.collected.includes(partId)) return;
-    setState({ collected: [...state.collected, partId] });
-  },
-  get allCollected() {
-    return state.collected.length === shipParts.length;
+  collect(key: string) {
+    if (state.collected.includes(key)) return;
+    setState({ collected: [...state.collected, key] });
   },
   setNear(id: string | null) {
-    if (state.nearMonument !== id) setState({ nearMonument: id });
+    if (state.nearSite !== id) setState({ nearSite: id });
   },
-  openCard(id: string | null = state.nearMonument) {
-    if (!id || state.phase !== 'playing' || state.openMonument) return;
-    // The timer pauses while a project card is open.
-    setState({ openMonument: id, ...pause(state) });
+  /** Opening a site's card counts as visiting it. The timer pauses while it is open. */
+  openCard(id: string | null = state.nearSite) {
+    if (!id || state.phase !== 'playing' || state.openSite) return;
+    const visited = state.visited.includes(id) ? state.visited : [...state.visited, id];
+    setState({ openSite: id, visited, ...pause(state) });
   },
   closeCard() {
-    if (!state.openMonument) return;
-    setState({ openMonument: null, runningSince: performance.now() });
+    if (!state.openSite) return;
+    setState({ openSite: null, runningSince: performance.now() });
   },
-  /** The player reached the ship with every part: stop the clock and repair. */
+  /** The player reached the boat with everything done: stop the clock and repair. */
   beginRepair() {
     const finalTime = elapsed();
     const newBest = state.best === null || finalTime < state.best;
     if (newBest) write(BEST_KEY, String(Math.round(finalTime)));
     setState({
       phase: 'repairing',
-      nearMonument: null,
+      nearSite: null,
       ...pause(state),
       finalTime,
       newBest,
       best: newBest ? finalTime : state.best,
     });
   },
-  launch() {
-    setState({ phase: 'launching' });
+  sail() {
+    setState({ phase: 'sailing' });
   },
   win() {
     setState({ phase: 'won' });
